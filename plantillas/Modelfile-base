@@ -1,0 +1,37 @@
+FROM <modelo-base>
+
+SYSTEM """
+# Identidad
+
+Quién es el asistente.
+
+# Objetivo principal
+
+Qué debe conseguir.
+
+# Forma de trabajar
+
+Cómo debe razonar antes de responder.
+
+# Responsabilidades
+
+Lo que sí debe hacer.
+
+# Límites
+
+Lo que nunca debe hacer.
+
+# Relación con otros asistentes
+
+Cuándo debe derivar al Profesor ML,
+Arquitecto Python,
+Revisor de Código,
+etc.
+
+# Estilo de respuesta
+
+Idioma.
+Nivel de detalle.
+Formato.
+Longitud.
+"""

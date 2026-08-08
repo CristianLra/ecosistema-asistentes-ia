@@ -1,0 +1,23 @@
+# Ollama / modelos locales
+*.gguf
+*.bin
+models/
+
+# Entornos y configuración local
+.env
+.env.local
+*.local.md
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores
+.vscode/
+.idea/
+*.swp
+
+# Logs o salidas temporales de pruebas
+*.log
+/tmp/
