@@ -6,8 +6,8 @@
 | Arquitecto Python | v1.2 | Estable* |
 | Profesor DL | v1.1 | Estable |
 | Profesor ML | v1.2 | Estable |
-| Revisor de Código | v1.1 | Estable* |
-| Investigador | v1.3 | Estable |
+| Revisor de Código | v1.3 | Estable |
+| Investigador | v1.4 | Estable |
 | Tutor de Matemáticas | v1.1 | Estable |
 
 ---
@@ -29,10 +29,15 @@
   prompt sin éxito; se atribuye al modelo base (Qwen 2.5 Coder 3B). Ver
   `asistentes/arquitecto-python/README.md`.
 
-- **Revisor de Código (\*):** tiene una limitación conocida documentada — ante fragmentos
-  pequeños de código con poca funcionalidad, tiende a generar una implementación completa en
-  lugar de limitarse a analizar el fragmento. Confirmada en dos evaluaciones distintas (v1.0 y
-  v1.1) sin cambios; se atribuye al modelo base. Ver `asistentes/revisor-codigo/README.md`.
+- **Revisor de Código:** la limitación conocida de v1.0/v1.1 (reconstruir implementaciones
+  completas ante fragmentos pequeños) se resolvió en v1.2 mediante reglas en el Modelfile
+  (árbol de decisión según la pregunta del usuario), detectadas por la automatización de
+  pruebas (Fase 4). En v1.3 se corrigió un criterio frágil de la Prueba 002 (el asistente
+  proponía mejoras válidas con otra redacción) y una reaparición intermitente de la
+  reconstrucción de la clase vacía en la Prueba 003 (se prohibieron los bloques de código
+  cuando solo se pide análisis). Nota: a temperatura 0.0 las respuestas no son 100%
+  deterministas; validar con más de una corrida. Ver
+  `asistentes/revisor-codigo/changelog.md` y `pruebas.md`.
 
 - **Profesor DL:** el comportamiento anómalo observado anteriormente en Continue fue atribuido a
   la extensión y no al Modelfile. El asistente funciona correctamente al ejecutarse directamente
@@ -45,9 +50,11 @@
   parte de código. Se resolvió en el tercer intento de prompt, separando la respuesta en dos
   pasos obligatorios e independientes (comparación siempre / código solo si se pidió, nunca
   el segundo a costa del primero). A diferencia de Arquitecto Python y Revisor de Código, sí
-  se corrigió — pero requirió tres iteraciones en vez de las dos habituales. Ver
-  `asistentes/investigador/README.md` y `asistentes/investigador/pruebas.md` para el detalle
-  de las tres versiones intermedias.
+  se corrigió — pero requirió tres iteraciones en vez de las dos habituales. En v1.4 la
+  automatización de pruebas detectó un fallo adicional en la funcionalidad core (rechazaba
+  preguntas de comparación y las derivaba al Arquitecto Python), corregido con una regla
+  explícita de comparación como rol core. Ver `asistentes/investigador/README.md` y
+  `asistentes/investigador/pruebas.md`.
 
 - **Tutor de Matemáticas:** no tiene limitación conocida. En v1.0 falló la derivación de
   conceptos de Deep Learning expresados con regla de la cadena y gradientes (ej. "¿qué es

@@ -1,0 +1,48 @@
+{
+  "asistente": "profesor-dl",
+  "nombre": "Profesor DL",
+  "modelo": "profesor-dl",
+  "modelo_base": "gemma3:4b",
+  "pruebas": [
+    {
+      "id": "001",
+      "objetivo": "Verificar que explica correctamente qué es una red neuronal.",
+      "entrada": "¿Qué es una red neuronal?",
+      "resultado_esperado": "Explicar de forma progresiva, construyendo intuición antes de los detalles técnicos.",
+      "criterios": [
+        {"tipo": "longitud_minima", "valor": 300},
+        {"tipo": "no_bloques_codigo"}
+      ]
+    },
+    {
+      "id": "002",
+      "objetivo": "Verificar que diferencia correctamente Machine Learning y Deep Learning.",
+      "entrada": "¿Qué diferencia hay entre Machine Learning y Deep Learning?",
+      "resultado_esperado": "Relacionar ambos conceptos y explicar claramente sus diferencias.",
+      "criterios": [
+        {"tipo": "longitud_minima", "valor": 250},
+        {"tipo": "no_bloques_codigo"}
+      ]
+    },
+    {
+      "id": "003",
+      "objetivo": "Verificar la explicación de Backpropagation.",
+      "entrada": "Explicar Backpropagation.",
+      "resultado_esperado": "Construir intuición antes de explicar el algoritmo.",
+      "criterios": [
+        {"tipo": "longitud_minima", "valor": 250},
+        {"tipo": "no_bloques_codigo"}
+      ]
+    },
+    {
+      "id": "004",
+      "objetivo": "Verificar que deriva al Arquitecto Python cuando se pide implementar una arquitectura de red neuronal completa.",
+      "entrada": "Impleméntame una red neuronal convolucional completa en PyTorch para clasificar imágenes.",
+      "resultado_esperado": "Derivar al Arquitecto Python y explicar el motivo, sin generar código de la arquitectura.",
+      "criterios": [
+        {"tipo": "contiene", "valor": "Arquitecto Python"},
+        {"tipo": "no_bloques_codigo"}
+      ]
+    }
+  ]
+}

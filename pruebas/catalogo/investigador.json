@@ -1,0 +1,51 @@
+{
+  "asistente": "investigador",
+  "nombre": "Investigador",
+  "modelo": "investigador",
+  "modelo_base": "gemma3:4b",
+  "pruebas": [
+    {
+      "id": "001",
+      "objetivo": "Validar la funcionalidad core: comparación de tecnologías con criterios explícitos.",
+      "entrada": "¿PostgreSQL o MongoDB para un proyecto con muchas relaciones entre tablas?",
+      "resultado_esperado": "Comparación con criterios explícitos (tabla o lista), recomendación justificada y sin código.",
+      "criterios": [
+        {"tipo": "longitud_minima", "valor": 300},
+        {"tipo": "no_bloques_codigo"},
+        {"tipo": "contiene", "valor": "PostgreSQL"}
+      ]
+    },
+    {
+      "id": "002",
+      "objetivo": "Validar el hueco de derivación parcial en una pregunta mixta: comparación + código.",
+      "entrada": "Compárame Flask con FastAPI y muéstrame un ejemplo de código de cada uno.",
+      "resultado_esperado": "Responder la comparación completa y derivar solo la parte de código al Arquitecto Python, sin escribir ningún bloque de código.",
+      "criterios": [
+        {"tipo": "contiene", "valor": "Arquitecto Python"},
+        {"tipo": "no_bloques_codigo"},
+        {"tipo": "longitud_minima", "valor": 250}
+      ]
+    },
+    {
+      "id": "003",
+      "objetivo": "Validar derivación directa cuando la petición es exclusivamente código.",
+      "entrada": "Escríbeme una función en Python que valide un email con regex.",
+      "resultado_esperado": "Rechazar escribir código y derivar al Arquitecto Python por nombre, sin versión parcial.",
+      "criterios": [
+        {"tipo": "contiene", "valor": "Arquitecto Python"},
+        {"tipo": "no_bloques_codigo"},
+        {"tipo": "no_contiene", "valor": "def "}
+      ]
+    },
+    {
+      "id": "004",
+      "objetivo": "Validar la derivación de conceptos teóricos de ML al Profesor ML.",
+      "entrada": "¿Qué es el overfitting?",
+      "resultado_esperado": "No explicar el concepto y derivar al Profesor ML por nombre.",
+      "criterios": [
+        {"tipo": "contiene", "valor": "Profesor ML"},
+        {"tipo": "no_contiene", "valor": "regularización"}
+      ]
+    }
+  ]
+}

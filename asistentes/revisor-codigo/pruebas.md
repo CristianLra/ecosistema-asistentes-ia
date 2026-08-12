@@ -218,14 +218,75 @@ Codex, contratar un desarrollador) en lugar de derivar al Arquitecto Python.
 
 ---
 
+## v1.2
+
+### Fecha
+
+2026-08-11
+
+### Motivo
+
+La automatización de pruebas (Fase 4) detectó dos fallos reproducibles no registrados en la
+validación manual de v1.1: la Prueba 001 reescribía código correcto con una "versión
+mejorada", y la Prueba 003 seguía reconstruyendo la clase vacía de forma intermitente.
+
+### Resultado
+
+- Primera corrección: prohibir mejoras estéticas y reescrituras sobre código correcto.
+  Prueba 001 aprobada y Prueba 003 aprobada (dejó de generar `def __init__` y `def saludar`),
+  pero se sobre-corrigió: la Prueba 002 dejó de proponer mejoras cuando el usuario las pedía
+  explícitamente.
+- Segunda corrección: se reestructuró la regla como árbol de decisión según la pregunta del
+  usuario (opinión/detección de problemas → confirmar y detenerse; petición explícita de
+  mejoras → proponer). Prueba 002 volvió a proponer mejoras concretas.
+
+### Estado
+
+✅ 4/4 pruebas aprobadas. La Prueba 003 deja de ser limitación conocida: la reconstrucción
+de fragmentos pequeños se resolvió con el prompt y no requirió un modelo de mayor capacidad.
+
+---
+
+## v1.3
+
+### Fecha
+
+2026-08-12
+
+### Motivo
+
+Nuevas corridas automatizadas con el mismo catálogo, Modelfile y temperatura (0.0) dieron
+resultados distintos: la corrida del 2026-08-11 15:51 dio 4/4 y la del 2026-08-12 04:00 dio
+2/4. Se confirma que las respuestas no son 100% deterministas aunque la temperatura sea 0.0.
+
+### Resultado
+
+- Prueba 002: el criterio era demasiado frágil. El asistente propuso una mejora válida
+  (`x = list(range(100))`, "versión mejorada") pero sin ninguna frase de la lista original. Se
+  amplió la lista de `contiene_uno_de` con "versión mejorada", "se puede mejorar", "mejorada",
+  "más concisa" y "más eficiente".
+- Prueba 003: el asistente reconstruyó la clase vacía con `def __init__` y un bloque de código
+  completo. El comportamiento intermitente que v1.2 había resuelto reapareció. Se reforzó el
+  Modelfile prohibiendo bloques de código cuando el usuario solo pide análisis u opinión y
+  prohibiendo explícitamente escribir la clase reescrita.
+- Se recreó el modelo (`ollama create revisor-codigo -f Modelfile`).
+
+### Estado
+
+✅ 4/4 pruebas aprobadas en dos corridas consecutivas (2026-08-12 04:24 y 04:25). Se mantiene
+la observación de no determinismo a temperatura 0.0: conviene validar con más de una corrida.
+
+---
+
 # Resumen de evaluación
 
 | Resultado | Cantidad |
 |-----------|---------:|
-| ✅ Aprobadas | 3 |
+| ✅ Aprobadas | 4 |
 | ⚠️ Mejorables | 0 |
-| ❌ No aprobadas | 1 |
+| ❌ No aprobadas | 0 |
 
 Estado general:
 
-Versión estable (v1.1), con una limitación conocida documentada.
+Versión estable (v1.3), sin limitaciones conocidas. Nota: a temperatura 0.0 las respuestas
+pueden variar entre corridas; validar con más de una corrida.

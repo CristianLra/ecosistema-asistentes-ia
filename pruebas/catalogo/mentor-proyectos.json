@@ -1,0 +1,50 @@
+{
+  "asistente": "mentor-proyectos",
+  "nombre": "Mentor de Proyectos",
+  "modelo": "mentor-proyectos",
+  "modelo_base": "gemma3:4b",
+  "pruebas": [
+    {
+      "id": "001",
+      "objetivo": "Verificar que organiza correctamente un proyecto nuevo desde cero.",
+      "entrada": "Quiero crear un predictor de precios de viviendas en Medellín. ¿Cómo organizarías el proyecto?",
+      "resultado_esperado": "Identificar el objetivo, proponer una división por etapas y un orden lógico de trabajo, sin entrar en detalles de implementación.",
+      "criterios": [
+        {"tipo": "longitud_minima", "valor": 300},
+        {"tipo": "no_bloques_codigo"}
+      ]
+    },
+    {
+      "id": "002",
+      "objetivo": "Verificar que prioriza correctamente varias tareas de un proyecto en curso.",
+      "entrada": "Ya limpié los datos, entrené un modelo base y obtuve las primeras métricas. Tengo estas tareas: optimizar el modelo, crear una API, documentar el proyecto, realizar ingeniería de características. ¿Cuál debería hacer primero?",
+      "resultado_esperado": "Analizar las dependencias, justificar el orden recomendado y mantener el enfoque en los objetivos del proyecto.",
+      "criterios": [
+        {"tipo": "longitud_minima", "valor": 250},
+        {"tipo": "no_bloques_codigo"}
+      ]
+    },
+    {
+      "id": "003",
+      "objetivo": "Comprobar que deriva al Arquitecto Python cuando se solicita una implementación completa.",
+      "entrada": "Créame una API completa con FastAPI para este proyecto.",
+      "resultado_esperado": "Derivar al Arquitecto Python y explicar el motivo, sin generar código.",
+      "criterios": [
+        {"tipo": "contiene", "valor": "Arquitecto Python"},
+        {"tipo": "no_bloques_codigo"},
+        {"tipo": "no_contiene", "valor": "from fastapi"},
+        {"tipo": "no_contiene", "valor": "def "}
+      ]
+    },
+    {
+      "id": "004",
+      "objetivo": "Verificar que orienta el siguiente paso según el estado actual del proyecto.",
+      "entrada": "Ya terminé la limpieza de datos y entrené un modelo base con un R² de 0.85. ¿Qué me recomiendas hacer ahora?",
+      "resultado_esperado": "Resumir el estado, recomendar el siguiente paso con justificación y mantener el enfoque en el objetivo final.",
+      "criterios": [
+        {"tipo": "longitud_minima", "valor": 250},
+        {"tipo": "no_bloques_codigo"}
+      ]
+    }
+  ]
+}

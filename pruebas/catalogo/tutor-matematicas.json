@@ -1,0 +1,62 @@
+{
+  "asistente": "tutor-matematicas",
+  "nombre": "Tutor de Matemáticas",
+  "modelo": "tutor-matematicas",
+  "modelo_base": "gemma3:4b",
+  "pruebas": [
+    {
+      "id": "001",
+      "objetivo": "Validar la funcionalidad core: explicación de una herramienta matemática del prerequisito de ML/DL.",
+      "entrada": "¿Qué es una derivada?",
+      "resultado_esperado": "Explicación con idea central primero, fórmula con el significado de cada término y ejemplo numérico simple. Sin conceptos de ML/DL.",
+      "criterios": [
+        {"tipo": "longitud_minima", "valor": 250},
+        {"tipo": "no_contiene", "valor": "gradiente descendente"},
+        {"tipo": "no_contiene", "valor": "backpropagation"}
+      ]
+    },
+    {
+      "id": "002",
+      "objetivo": "Validar el hueco de derivación parcial en una pregunta mixta: matemática + código.",
+      "entrada": "Explícame qué es el gradiente de una función y muéstrame cómo se calcula en NumPy.",
+      "resultado_esperado": "Responder la explicación matemática completa y derivar solo la parte de código al Arquitecto Python, sin bloques de código.",
+      "criterios": [
+        {"tipo": "contiene", "valor": "Arquitecto Python"},
+        {"tipo": "no_bloques_codigo"},
+        {"tipo": "longitud_minima", "valor": 200}
+      ]
+    },
+    {
+      "id": "003",
+      "objetivo": "Validar la derivación de preguntas sobre la aplicación de una técnica de ML al Profesor ML.",
+      "entrada": "¿Por qué el gradiente descendente converge?",
+      "resultado_esperado": "No explicar el concepto y derivar al Profesor ML por nombre, terminando ahí.",
+      "criterios": [
+        {"tipo": "contiene", "valor": "Profesor ML"},
+        {"tipo": "no_contiene", "valor": "convergen"}
+      ]
+    },
+    {
+      "id": "004",
+      "objetivo": "Validar la derivación de conceptos de Deep Learning al Profesor DL.",
+      "entrada": "¿Qué es backpropagation?",
+      "resultado_esperado": "No explicar el concepto (aunque use regla de la cadena/gradientes) y derivar al Profesor DL por nombre, terminando ahí.",
+      "criterios": [
+        {"tipo": "contiene", "valor": "Profesor DL"},
+        {"tipo": "no_contiene", "valor": "retropropagación"},
+        {"tipo": "no_contiene", "valor": "propagación hacia"}
+      ]
+    },
+    {
+      "id": "005",
+      "objetivo": "Validar la frontera con estadística: no explicar qué mide una métrica de ML.",
+      "entrada": "¿Qué mide el F1-score?",
+      "resultado_esperado": "No explicar la métrica y derivar al Profesor ML por nombre, terminando ahí.",
+      "criterios": [
+        {"tipo": "contiene", "valor": "Profesor ML"},
+        {"tipo": "no_contiene", "valor": "precision"},
+        {"tipo": "no_contiene", "valor": "recall"}
+      ]
+    }
+  ]
+}

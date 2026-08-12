@@ -30,12 +30,22 @@
 - [ ] Sistema RAG
 - [ ] Coordinador
 - [ ] Biblioteca de ejemplos
-- [ ] Automatización de pruebas
+- [x] Automatización de pruebas
+
+> La automatización de pruebas quedó operativa (ver
+> `documentacion/automatizacion-pruebas.md`). Ha detectado y ayudado a resolver
+> comportamientos no registrados en las validaciones manuales: el Investigador rechazaba su
+> funcionalidad core (comparación de tecnologías), el Revisor de Código reescribía código
+> correcto (v1.2) y luego mostró un criterio frágil y una reaparición intermitente de la
+> reconstrucción de clases (v1.3). El runner incluye calentamiento del modelo y reintentos
+> ante errores de conexión. Resultado de la corrida del 2026-08-12: 27/28 (único pendiente:
+> limitación conocida del Arquitecto Python).
 
 ---
 
 ## Fase 5 - Reevaluación con modelos de mayor capacidad
 
 - [ ] Reevaluar Arquitecto Python con Qwen 7B o superior (derivación conceptual a Profesor ML).
-- [ ] Reevaluar Revisor de Código con Qwen 7B o superior (reconstrucción de fragmentos pequeños).
-- [ ] Confirmar si las limitaciones conocidas persisten o eran del modelo 3B.
+- [x] Reevaluar Revisor de Código (la reconstrucción de fragmentos pequeños se resolvió en
+  v1.2 con el prompt, y en v1.3 se estabilizó para análisis sin bloques de código, sin
+  requerir un modelo mayor).

@@ -21,3 +21,10 @@ desktop.ini
 # Logs o salidas temporales de pruebas
 *.log
 /tmp/
+
+# Python
+__pycache__/
+*.pyc
+
+# Reportes generados por la automatización de pruebas
+/pruebas/reportes/

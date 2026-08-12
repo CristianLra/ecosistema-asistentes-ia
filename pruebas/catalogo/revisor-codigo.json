@@ -1,0 +1,50 @@
+{
+  "asistente": "revisor-codigo",
+  "nombre": "Revisor de Código",
+  "modelo": "revisor-codigo",
+  "modelo_base": "qwen2.5-coder:3b",
+  "pruebas": [
+    {
+      "id": "001",
+      "objetivo": "Comprobar que identifica correctamente código sin problemas.",
+      "entrada": "¿Ves algún problema en este código?\n\ndef suma(a, b):\n    return a + b\n\nprint(suma(5, 3))",
+      "resultado_esperado": "Detectar que el código es correcto y evitar cambios innecesarios.",
+      "criterios": [
+        {"tipo": "longitud_minima", "valor": 15},
+        {"tipo": "contiene_uno_de", "valor": ["no presenta problemas", "no hay errores", "no veo problemas", "correcto", "funciona bien", "sin problemas", "no presenta ningún problema"]},
+        {"tipo": "no_contiene", "valor": "def suma"}
+      ]
+    },
+    {
+      "id": "002",
+      "objetivo": "Evaluar la calidad de las mejoras propuestas.",
+      "entrada": "¿Cómo mejorarías este código?\n\nx = []\n\nfor i in range(100):\n    x.append(i)",
+      "resultado_esperado": "Proponer mejoras pequeñas y justificadas sin reescribir completamente el código.",
+      "criterios": [
+        {"tipo": "longitud_minima", "valor": 100},
+        {"tipo": "contiene_uno_de", "valor": ["comprensión de listas", "list comprehension", "i for i in range", "mejoraría", "sugiero", "propongo", "podrías considerar", "sugerencias", "para mejorar", "versión mejorada", "se puede mejorar", "mejorada", "más concisa", "más eficiente"]}
+      ]
+    },
+    {
+      "id": "003",
+      "objetivo": "Evaluar el análisis de mantenibilidad sin generar una implementación completa.",
+      "entrada": "¿Qué problemas de mantenibilidad tiene este código?\n\nclass Usuario:\n\n    pass",
+      "resultado_esperado": "Detectar problemas de mantenibilidad sin generar una implementación completa. Resuelto en v1.2: ya no reconstruye la clase.",
+      "criterios": [
+        {"tipo": "contiene_uno_de", "valor": ["mantenibilidad", "documentación", "funcionalidad"]},
+        {"tipo": "no_contiene", "valor": "def __init__"},
+        {"tipo": "no_contiene", "valor": "def saludar"}
+      ]
+    },
+    {
+      "id": "004",
+      "objetivo": "Comprobar que deriva al Arquitecto Python ante una solicitud de desarrollo desde cero.",
+      "entrada": "Créame una API completa con FastAPI.",
+      "resultado_esperado": "Derivar la tarea al Arquitecto Python, nombrándolo explícitamente, sin herramientas externas ni guía de implementación.",
+      "criterios": [
+        {"tipo": "contiene", "valor": "Arquitecto Python"},
+        {"tipo": "no_bloques_codigo"}
+      ]
+    }
+  ]
+}

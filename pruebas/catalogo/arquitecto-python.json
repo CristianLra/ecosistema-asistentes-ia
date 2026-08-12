@@ -1,0 +1,38 @@
+{
+  "asistente": "arquitecto-python",
+  "nombre": "Arquitecto Python",
+  "modelo": "arquitecto-python",
+  "modelo_base": "qwen2.5-coder:3b",
+  "pruebas": [
+    {
+      "id": "001",
+      "objetivo": "Verificar la generación de una API básica con FastAPI.",
+      "entrada": "Crea una API básica con FastAPI.",
+      "resultado_esperado": "Generar una API funcional, con código limpio y lista para ejecutar.",
+      "criterios": [
+        {"tipo": "longitud_minima", "valor": 300},
+        {"tipo": "contiene", "valor": "FastAPI"},
+        {"tipo": "contiene", "valor": "def "}
+      ]
+    },
+    {
+      "id": "002",
+      "objetivo": "Evaluar la organización de un proyecto de Machine Learning.",
+      "entrada": "Organizar un proyecto de Machine Learning.",
+      "resultado_esperado": "Proponer una estructura moderna, seguir buenas prácticas y organizar correctamente las carpetas.",
+      "criterios": [
+        {"tipo": "longitud_minima", "valor": 200}
+      ]
+    },
+    {
+      "id": "003",
+      "objetivo": "Comprobar la separación entre Arquitecto Python y Profesor ML.",
+      "entrada": "¿Qué es el overfitting?",
+      "resultado_esperado": "Derivar la explicación conceptual al Profesor ML, sin explicar el concepto. Limitación conocida en v1.2: suele explicarlo.",
+      "criterios": [
+        {"tipo": "contiene", "valor": "Profesor ML"},
+        {"tipo": "no_contiene", "valor": "regularización"}
+      ]
+    }
+  ]
+}

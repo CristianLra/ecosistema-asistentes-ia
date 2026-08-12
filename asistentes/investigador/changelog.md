@@ -78,6 +78,25 @@ Registro de cambios del asistente.
 
 ---
 
+## v1.4
+
+### Fecha
+
+2026-08-11
+
+### Cambios
+
+- Automatización de pruebas (Fase 4): la Prueba 001 (funcionalidad core) falló de forma
+  reproducible en dos corridas — el asistente rechazaba una pregunta de comparación de
+  tecnologías ("¿PostgreSQL o MongoDB...?") con "esa pregunta no me corresponde a mí" y la
+  derivaba al Arquitecto Python, contradiciendo su rol principal.
+- Fix: se agregó la regla explícita de que las preguntas de comparación de tecnologías son
+  el rol core y NUNCA se derivan, y un ejemplo concreto de pregunta/respuesta esperada.
+- Resultado: 4/4 pruebas aprobadas con la automatización. La regla de comparación como rol
+  core pasó a formar parte del Modelfile de forma permanente.
+
+---
+
 ## Próxima versión
 
 ### Mejoras previstas

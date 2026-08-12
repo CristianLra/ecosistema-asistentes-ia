@@ -203,6 +203,33 @@ Se separó la instrucción en dos pasos obligatorios e independientes (Paso 1: c
 
 ---
 
+## Reevaluación v1.4
+
+### Fecha
+
+2026-08-11
+
+### Motivo
+
+La automatización de pruebas (Fase 4) reveló un fallo no detectado en las validaciones
+manuales: la Prueba 001 fallaba de forma reproducible, incluso con la temperatura usada en
+las pruebas manuales (0.8). Ante "¿PostgreSQL o MongoDB para un proyecto con muchas
+relaciones entre tablas?", el asistente respondía: "Esa es una pregunta sobre comparación
+de tecnologías, no me corresponde a mí. Te recomiendo consultarlo con el Arquitecto Python."
+
+### Resultado
+
+Se agregó al Modelfile la regla explícita de que las comparaciones de tecnologías son el rol
+core y nunca se derivan (con ejemplo concreto de pregunta/respuesta esperada). Tras recrear
+el modelo: Prueba 001 aprobada — comparación completa con criterios y sin derivación. El
+resto de pruebas se mantuvieron aprobadas.
+
+### Estado
+
+✅ 4/4 aprobadas con la automatización. Regla incorporada al Modelfile (v1.4).
+
+---
+
 # Resumen de evaluación
 
 | Resultado | Cantidad |

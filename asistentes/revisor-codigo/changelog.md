@@ -55,6 +55,52 @@ Registro de cambios del Revisor de Código.
 
 ---
 
+## v1.2
+
+### Fecha
+
+2026-08-11
+
+### Cambios
+
+- Automatización de pruebas (Fase 4) detectó dos fallos reproducibles:
+  - Prueba 001: reescribía código correcto con una "versión mejorada" (docstrings, nombres
+    de variables), contradiciendo la instrucción de evitar cambios innecesarios.
+  - Prueba 003: seguía reconstruyendo la clase vacía con constructor y métodos completos.
+- Fix en dos iteraciones:
+  1. Se prohibió proponer mejoras estéticas ni reescrituras sobre código correcto. Resultado:
+     la Prueba 003 dejó de reconstruir la clase, pero se sobre-corrigió: la Prueba 002
+     (petición explícita de mejoras) también dejó de proponerlas.
+  2. Se reestructuró la regla como árbol de decisión según la pregunta del usuario: opinión/
+     detección de problemas → confirmar y detenerse; petición explícita de mejoras → proponer
+     mejoras concretas. Resultado: 4/4 pruebas aprobadas.
+- La Prueba 003 deja de ser limitación conocida: la reconstrucción de clases vacías se
+  resolvió con el prompt y no requirió un modelo de mayor capacidad.
+
+---
+
+## v1.3
+
+### Fecha
+
+2026-08-12
+
+### Cambios
+
+- La automatización detectó que, a temperatura 0.0, las respuestas no son 100% deterministas:
+  una corrida (2026-08-11) dio 4/4 y otra (2026-08-12) dio 2/4 con el mismo catálogo y Modelfile.
+- Prueba 002: el criterio era demasiado frágil. El asistente propuso una mejora válida
+  (`x = list(range(100))`) pero sin ninguna de las frases de la lista (`comprensión de listas`,
+  `sugiero`, etc.). Se amplió la lista con las frases que usa naturalmente ("versión mejorada",
+  "se puede mejorar", "mejorada", "más concisa", "más eficiente").
+- Prueba 003: volvió a reconstruir la clase vacía con `def __init__` (comportamiento
+  intermitente que v1.2 no eliminó por completo). Se reforzó el Modelfile: prohibido incluir
+  bloques de código cuando el usuario solo pide análisis u opinión, y prohibido escribir la
+  clase reescrita en las respuestas de mantenibilidad.
+- Resultado: 4/4 aprobadas en dos corridas consecutivas (2026-08-12 04:24 y 04:25).
+
+---
+
 ## Próxima versión
 
 ### Mejoras previstas

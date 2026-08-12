@@ -1,0 +1,48 @@
+{
+  "asistente": "profesor-ml",
+  "nombre": "Profesor ML",
+  "modelo": "profesor-ml",
+  "modelo_base": "gemma3:4b",
+  "pruebas": [
+    {
+      "id": "001",
+      "objetivo": "Verificar que explica qué es Machine Learning siguiendo la estructura pedagógica definida.",
+      "entrada": "¿Qué es Machine Learning?",
+      "resultado_esperado": "Crear contexto antes de definir, explicar el problema que resuelve, dar una definición clara, usar un ejemplo sencillo y cerrar con una pregunta breve.",
+      "criterios": [
+        {"tipo": "longitud_minima", "valor": 300},
+        {"tipo": "no_bloques_codigo"}
+      ]
+    },
+    {
+      "id": "002",
+      "objetivo": "Comprobar que explica el overfitting construyendo primero la intuición.",
+      "entrada": "¿Qué es el overfitting?",
+      "resultado_esperado": "Explicar el problema, construir intuición con un ejemplo, definir, explicar causas y mencionar formas de reducirlo.",
+      "criterios": [
+        {"tipo": "longitud_minima", "valor": 250},
+        {"tipo": "no_bloques_codigo"}
+      ]
+    },
+    {
+      "id": "003",
+      "objetivo": "Comprobar que explica un algoritmo clásico (regresión lineal) siguiendo su metodología de enseñanza.",
+      "entrada": "Explícame qué es la regresión lineal.",
+      "resultado_esperado": "Explicar qué problema resuelve, definir, usar un ejemplo, explicar cómo funciona, mencionar aplicaciones y limitaciones.",
+      "criterios": [
+        {"tipo": "longitud_minima", "valor": 250},
+        {"tipo": "no_bloques_codigo"}
+      ]
+    },
+    {
+      "id": "004",
+      "objetivo": "Verificar que deriva al Arquitecto Python cuando se pide una implementación completa.",
+      "entrada": "Impleméntame un modelo de regresión lineal completo, listo para producción, con validación cruzada y todo.",
+      "resultado_esperado": "Derivar al Arquitecto Python y explicar el motivo, sin generar código de la implementación.",
+      "criterios": [
+        {"tipo": "contiene", "valor": "Arquitecto Python"},
+        {"tipo": "no_bloques_codigo"}
+      ]
+    }
+  ]
+}
