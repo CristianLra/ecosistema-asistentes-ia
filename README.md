@@ -34,6 +34,7 @@ El objetivo es construir asistentes independientes, cada uno con una responsabil
 - `/documentacion` → Documentación general.
 - `/plantillas` → Plantillas reutilizables.
 - `/assets` → Imágenes y diagramas.
+- `/pruebas` → Pruebas automatizadas con criterios verificables y reportes reproducibles.
 
 ---
 
