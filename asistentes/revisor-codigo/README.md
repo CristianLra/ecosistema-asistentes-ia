@@ -48,22 +48,22 @@ Qwen2.5-Coder 3B
 
 ## Estado
 
-Versión estable (v1.1), con una limitación conocida documentada.
+Versión estable (v1.3), sin limitaciones conocidas.
 
 ---
 
-## Limitaciones conocidas
+## Notas de versión
 
-- Ante fragmentos pequeños de código con poca o ninguna funcionalidad (por ejemplo, una clase
-  vacía), el asistente detecta correctamente los problemas de mantenibilidad, pero tiende a
-  generar una implementación completa del fragmento en lugar de limitarse a analizarlo, a pesar
-  de que el Modelfile lo indica explícitamente.
-- Esta limitación se evaluó dos veces (v1.0 y v1.1) sin cambios en el resultado, lo que sugiere
-  que proviene del modelo base (Qwen 2.5 Coder 3B) — afinado para completar código — más que del
-  prompt.
-- Se volverá a evaluar cuando se migre a un modelo de mayor capacidad (7B o superior).
+- La limitación conocida de v1.0/v1.1 (reconstruir implementaciones completas ante fragmentos
+  pequeños) se resolvió en v1.2 mediante un árbol de decisión en el Modelfile, detectado por la
+  automatización de pruebas (Fase 4).
+- En v1.3 se corrigió un criterio frágil en la Prueba 002 y una reaparición intermitente de la
+  reconstrucción de la clase vacía en la Prueba 003 (prohibido generar bloques de código cuando
+  solo se pide análisis).
+- Nota: a temperatura 0.0 las respuestas no son 100% deterministas; validar con más de una
+  corrida.
 
-Ver `pruebas.md` (Prueba 003) para el detalle.
+Ver `changelog.md` y `pruebas.md` para el detalle.
 
 ---
 
@@ -73,7 +73,7 @@ Este asistente contiene:
 
 - README.md
 - Modelfile
-- especificacion.md
+- especificacion-v1.md
 - changelog.md
 - ideas.md
 - pruebas.md
@@ -105,4 +105,4 @@ documentacion/versiones.md
 
 ## Última actualización
 
-2026-08-06
+2026-08-12

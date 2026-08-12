@@ -58,7 +58,7 @@ Este asistente contiene:
 
 - README.md
 - Modelfile
-- especificacion.md
+- especificacion-v1.md
 - changelog.md
 - ideas.md
 - pruebas.md

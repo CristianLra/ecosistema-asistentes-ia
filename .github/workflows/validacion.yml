@@ -1,0 +1,33 @@
+name: Validación
+
+on:
+  push:
+    paths:
+      - "pruebas/**"
+      - ".github/workflows/validacion.yml"
+  pull_request:
+    paths:
+      - "pruebas/**"
+      - ".github/workflows/validacion.yml"
+  workflow_dispatch:
+
+jobs:
+  validacion:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clonar el repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Compilar el runner
+        run: python -m py_compile pruebas/ejecutar_pruebas.py
+
+      - name: Validar los catálogos de pruebas
+        run: python pruebas/validar_catalogos.py
+
+      - name: Probar la ayuda del runner
+        run: python pruebas/ejecutar_pruebas.py --help

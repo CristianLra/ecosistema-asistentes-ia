@@ -56,7 +56,7 @@ Gemma 3 4B
 
 ## Estado
 
-Versión estable.
+Versión estable (v1.1).
 
 ---
 

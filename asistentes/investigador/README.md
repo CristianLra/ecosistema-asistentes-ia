@@ -8,8 +8,6 @@ modo requeriría buscar y cruzar varias fuentes.
 
 ## Especialidad
 
-Describe claramente qué problemas resuelve este asistente.
-
 - Explicar qué hace una librería o framework y cómo se usa a alto nivel.
 - Comparar alternativas tecnológicas (ej. React vs Vue, PostgreSQL vs MongoDB).
 - Resumir buenas prácticas o convenciones de una tecnología específica.
@@ -52,7 +50,7 @@ Gemma 3 4B
 
 ## Estado
 
-En desarrollo.
+Versión estable (v1.4), sin limitaciones conocidas.
 
 ---
 
@@ -62,7 +60,7 @@ Este asistente contiene:
 
 - README.md
 - Modelfile
-- especificacion.md
+- especificacion-v1.md
 - changelog.md
 - ideas.md
 - pruebas.md
@@ -98,4 +96,4 @@ documentacion/versiones.md
 
 ## Última actualización
 
-2026-08-06
+2026-08-11

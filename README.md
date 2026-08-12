@@ -1,5 +1,7 @@
 # Ecosistema de Asistentes IA Locales
 
+[![Validación](https://github.com/CristianLra/ecosistema-asistentes-ia/actions/workflows/validacion.yml/badge.svg)](https://github.com/CristianLra/ecosistema-asistentes-ia/actions/workflows/validacion.yml)
+
 Proyecto para desarrollar un ecosistema de asistentes especializados utilizando modelos locales mediante Ollama.
 
 El objetivo es construir asistentes independientes, cada uno con una responsabilidad específica, evitando que un único modelo intente resolver todos los problemas.
@@ -113,6 +115,12 @@ Salida de ejemplo:
 ```
 
 Un reporte real de ejemplo está en [`pruebas/ejemplo-reporte.md`](pruebas/ejemplo-reporte.md) y la guía completa en [`documentacion/automatizacion-pruebas.md`](documentacion/automatizacion-pruebas.md).
+
+---
+
+## Demo
+
+Una conversación real con el Profesor ML (modelo base `gemma3:4b`) está en [`assets/ejemplo-overfitting.md`](assets/ejemplo-overfitting.md).
 
 ---
 
