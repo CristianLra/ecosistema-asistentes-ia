@@ -381,19 +381,19 @@ def principal(argv=None):
         modelo = args.modelo or catalogo["modelo"]
         print(f"\n== {catalogo['nombre']} ({modelo}) ==")
         if not args.sin_calentamiento:
-            print(f"  ⏳ Calentando modelo {modelo}...")
+            print(f"  Calentando modelo {modelo}...")
             consultar_ollama(modelo, "Hola", args.url, args.temperatura, args.tiempo_limite)
         resultados = []
         errores = []
         for prueba in catalogo["pruebas"]:
             resultado, error = None, None
             for intento in range(1, args.reintentos + 2):
-                print(f"  ⏳ Prueba {prueba.id} | consultando...")
+                print(f"  Prueba {prueba.id} | consultando...")
                 resultado, error = ejecutar_prueba(prueba, modelo, args.url, args.temperatura, args.tiempo_limite)
                 if error is None:
                     break
                 if intento <= args.reintentos:
-                    print(f"  🔁 Prueba {prueba.id} | reintento {intento}/{args.reintentos}...")
+                    print(f"  Reintento {prueba.id} {intento}/{args.reintentos}...")
             if error is not None:
                 errores.append((prueba.id, error))
                 print(f"  ⚠️ Prueba {prueba.id} | error al consultar Ollama: {error}")
