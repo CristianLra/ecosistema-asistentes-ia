@@ -7,6 +7,16 @@ Conjunto de **7 asistentes especializados** que corren localmente mediante [Olla
 
 ---
 
+## Highlights
+
+- **27/28 pruebas automatizadas** pasando con un runner que usa solo stdlib de Python (sin dependencias externas).
+- **Patron de derivacion:** cada asistente conoce sus limites y deriva al especialista correcto. Si le pides al Revisor de Codigo que te cree una API, te derivara al Arquitecto Python.
+- **Funciona 100% offline:** los modelos corren localmente con Ollama. Sin API keys, sin facturacion por tokens, sin internet.
+- **Documentacion de ingenieria:** cada asistente tiene especificacion, changelog, pruebas y decisiones de diseno documentadas.
+- **CI/CD:** GitHub Actions valida la estructura del proyecto en cada push y PR.
+
+---
+
 ## Caracteristicas
 
 - **Especializacion:** cada asistente tiene un unico rol (ensenanza, revision de codigo, planificacion, etc.).
@@ -130,7 +140,7 @@ asistentes-ia/
 
 ```bash
 git clone https://github.com/CristianLra/ecosistema-asistentes-ia.git
-cd ecossistema-asistentes-ia
+cd ecosistema-asistentes-ia
 ```
 
 ### 2. Descargar modelos y crear asistentes

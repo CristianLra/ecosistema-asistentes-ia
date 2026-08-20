@@ -121,3 +121,14 @@ consolidada con `--solo-resumen`:
 
 Total: 27/28. A temperatura 0.0 las respuestas no son 100% deterministas: validar con más de
 una corrida.
+
+---
+
+## Registro post-corrida
+
+Despues de cada sesion de pruebas:
+
+1. Actualizar `pruebas.md` del asistente correspondiente.
+2. Registrar mejoras en `ideas.md`.
+3. Actualizar `changelog.md` si hubo cambios.
+4. Si la prueba define una respuesta ejemplar, crear un archivo en `ejemplos/`.

@@ -9,8 +9,6 @@
 ## Media prioridad
 
 - [ ] Añadir más ejemplos al Profesor ML.
-- [x] Documentar la metodología de evaluación de todos los asistentes (ver
-      `documentacion/metodologia-validacion.md` y `documentacion/automatizacion-pruebas.md`).
 
 ---
 
@@ -18,8 +16,6 @@
 
 ### Revisor de Código
 
-- [x] Reevaluar con Qwen 7B o superior (se resolvió con el prompt en v1.2/v1.3, sin requerir
-      un modelo mayor — ver `documentacion/roadmap.md`, Fase 5).
 - [ ] Añadir revisión específica para proyectos FastAPI.
 - [ ] Añadir revisión específica para proyectos de Machine Learning.
 - [ ] Detectar automáticamente code smells.

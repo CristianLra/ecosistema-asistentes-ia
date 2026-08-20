@@ -54,11 +54,7 @@ Documento técnico que define el **contrato** del asistente: qué rol tiene, qu�
 
 Responde: ¿**Cómo** valido un asistente? Define el flujo de 8 pasos, los criterios de aprobación y cuándo revalidar.
 
-**Diferencia con guia-pruebas.md:** la metodología es el **proceso** (cómo se hace); la guía son los **casos de prueba** (qué se prueba en cada asistente).
-
-### `guia-pruebas.md`
-
-Responde: ¿**Qué** pruebo en cada asistente? Lista preguntas concretas por asistente y qué comprobar en cada una.
+**Diferencia con automatizacion-pruebas.md:** la metodología es el **proceso** (cómo se hace); la automatización documenta el **runner** y los catálogos JSON.
 
 ### `decisiones.md`
 
