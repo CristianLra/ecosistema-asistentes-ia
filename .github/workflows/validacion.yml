@@ -1,5 +1,8 @@
 name: Validación
 
+# Validación rápida sin Ollama: comprueba sintaxis y estructura de los catálogos
+# en cada push/PR. La ejecución de pruebas contra los modelos es local (ver
+# documentacion/automatizacion-pruebas.md).
 on:
   push:
     paths:

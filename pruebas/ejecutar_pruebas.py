@@ -61,6 +61,7 @@ class ResultadoPrueba:
 
 
 def cargar_catalogos(directorio):
+    """Lee los catálogos .json en orden alfabético para un orden determinista entre corridas."""
     catalogos = []
     for archivo in sorted(directorio.glob("*.json")):
         datos = json.loads(archivo.read_text(encoding="utf-8"))
@@ -88,6 +89,7 @@ def cargar_catalogos(directorio):
 
 
 def verificar_conexion(url_base):
+    """Falla rápido si Ollama no está corriendo, antes de ejecutar las pruebas."""
     try:
         urllib.request.urlopen(url_base + ENDPOINT_MODELOS, timeout=10)
         return True
@@ -96,6 +98,12 @@ def verificar_conexion(url_base):
 
 
 def consultar_ollama(modelo, prompt, url_base, temperatura, timeout):
+    """Envía un prompt a Ollama y devuelve la respuesta completa.
+
+    Se usa stream=False para recibir el texto final de una sola pieza: facilita
+    guardarlo en el reporte y evaluar los criterios sin depender de la salida
+    incremental de la terminal.
+    """
     payload = {
         "model": modelo,
         "prompt": prompt,
@@ -117,6 +125,7 @@ def consultar_ollama(modelo, prompt, url_base, temperatura, timeout):
 
 
 def evaluar_criterio(criterio, respuesta):
+    """Evalúa un criterio sobre la respuesta; las búsquedas ignoran mayúsculas/minúsculas."""
     tipo = criterio.tipo
     valor = criterio.valor
     texto = respuesta.lower()
@@ -142,6 +151,7 @@ def evaluar_criterio(criterio, respuesta):
 
 
 def ejecutar_prueba(prueba, modelo, url_base, temperatura, timeout):
+    """Consulta Ollama y evalúa los criterios; (None, error) separa un fallo de conexión de un fallo de criterio."""
     respuesta, error = consultar_ollama(modelo, prueba.entrada, url_base, temperatura, timeout)
     if error is not None:
         return None, error
@@ -381,12 +391,16 @@ def principal(argv=None):
         modelo = args.modelo or catalogo["modelo"]
         print(f"\n== {catalogo['nombre']} ({modelo}) ==")
         if not args.sin_calentamiento:
+            # La primera petición en frío tarda más por la carga del modelo;
+            # calentar evita que ese arranque lento caiga sobre la primera prueba.
             print(f"  Calentando modelo {modelo}...")
             consultar_ollama(modelo, "Hola", args.url, args.temperatura, args.tiempo_limite)
         resultados = []
         errores = []
         for prueba in catalogo["pruebas"]:
             resultado, error = None, None
+            # range(1, reintentos + 2) = primer intento + N reintentos.
+            # Solo se reintentan errores de conexión; los fallos de criterio no.
             for intento in range(1, args.reintentos + 2):
                 print(f"  Prueba {prueba.id} | consultando...")
                 resultado, error = ejecutar_prueba(prueba, modelo, args.url, args.temperatura, args.tiempo_limite)
@@ -422,6 +436,7 @@ def principal(argv=None):
     total_pruebas = sum(t for _, _, t, _ in resumen_global)
     print(f"\nTotal: {total_aprobadas}/{total_pruebas}")
 
+    # El resumen global solo tiene sentido cuando hay más de un asistente.
     if len(resumen_global) > 1:
         resumen = generar_resumen_global(resumen_global, fecha_legible, args.temperatura)
         directorio_resumen = reportes_dir / "resumen-global"

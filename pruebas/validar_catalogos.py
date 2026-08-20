@@ -12,6 +12,8 @@ from pathlib import Path
 
 CATALOGO_DIR = Path(__file__).resolve().parent / "catalogo"
 CAMPOS_OBLIGATORIOS = ("asistente", "nombre", "modelo", "modelo_base", "pruebas")
+# Contrato de validación: define qué tipo de 'valor' admite cada criterio.
+# None significa que ese criterio no admite 'valor'.
 TIPOS_CRITERIO = {
     "longitud_minima": "numero",
     "contiene": "texto",
@@ -83,6 +85,8 @@ def principal():
     errores = []
     for ruta in sorted(CATALOGO_DIR.glob("*.json")):
         errores.extend(validar_archivo(ruta))
+    # El código de salida (0/1) es lo que GitHub Actions interpreta como
+    # "pasando"/"fallando" en el paso de validación del workflow.
     if errores:
         for error in errores:
             print(f"ERROR: {error}")
