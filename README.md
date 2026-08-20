@@ -202,7 +202,11 @@ La guia completa esta en [`documentacion/automatizacion-pruebas.md`](documentaci
 
 ## Demo
 
-Conversaciones reales con cada asistente:
+### Video
+
+[Ver demo en video](assets/demo-asistentes-ia.mp4)
+
+### Capturas de ejecucion
 
 | Asistente | Pregunta | Archivo |
 |-----------|----------|---------|
