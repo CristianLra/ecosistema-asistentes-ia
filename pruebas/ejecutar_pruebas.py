@@ -5,10 +5,10 @@ máquina. El script consulta la API local de Ollama, evalúa cada criterio y gen
 reporte en markdown por asistente.
 
 Uso:
-    python ejecutar_pruebas.py
-    python ejecutar_pruebas.py --asistente tutor-matematicas
-    python ejecutar_pruebas.py --asistente revisor-codigo --temperatura 0.7
-    python ejecutar_pruebas.py --url http://localhost:11434
+    python pruebas/ejecutar_pruebas.py
+    python pruebas/ejecutar_pruebas.py --asistente tutor-matematicas
+    python pruebas/ejecutar_pruebas.py --asistente revisor-codigo --temperatura 0.7
+    python pruebas/ejecutar_pruebas.py --url http://localhost:11434
 """
 
 import argparse
