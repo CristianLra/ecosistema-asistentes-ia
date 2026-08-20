@@ -204,6 +204,24 @@ Conversaciones reales con cada asistente:
 | Mentor de Proyectos | Organizar tareas de un proyecto | [`ejemplo-organizacion-proyecto.md`](assets/conversaciones/ejemplo-organizacion-proyecto.md) |
 | Investigador | Compara FastAPI vs Flask | [`ejemplo-comparacion-tecnologias.md`](assets/conversaciones/ejemplo-comparacion-tecnologias.md) |
 
+### Capturas de ejecucion
+
+**Runner — Revisor de Codigo:**
+
+![Runner ejecutando pruebas del Revisor de Codigo](assets/screenshots/screenshot-runner-revisor.png)
+
+**Resumen global de pruebas:**
+
+![Resumen global de pruebas](assets/screenshots/screenshot-resumen-global.png)
+
+**Conversaciones con asistentes:**
+
+![Profesor ML explicando overfitting](assets/screenshots/screenshot-conv-profesor-ml.png)
+
+![Investigador comparando FastAPI vs Flask](assets/screenshots/screenshot-conv-investigador.png)
+
+![Arquitecto Python creando endpoint GET](assets/screenshots/screenshot-conv-arquitecto.png)
+
 ---
 
 ## Documentacion adicional
