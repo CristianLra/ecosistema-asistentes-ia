@@ -109,7 +109,9 @@ asistentes-ia/
 │   └── tutor-matematicas/
 ├── documentacion/       # Documentacion general del proyecto
 ├── plantillas/          # Plantillas reutilizables para nuevos asistentes
-├── assets/              # Demos y ejemplos para portafolio
+├── assets/              # Demos y ejemplos
+│   ├── conversaciones/  # Conversaciones reales por asistente
+│   └── screenshots/     # Capturas de ejecucion
 ├── pruebas/             # Sistema de pruebas automatizadas
 │   ├── catalogo/        # Definicion de pruebas por asistente (JSON)
 │   ├── ejecutar_pruebas.py   # Runner principal
@@ -194,13 +196,13 @@ Conversaciones reales con cada asistente:
 
 | Asistente | Pregunta | Archivo |
 |-----------|----------|---------|
-| Profesor ML | ¿Que es el overfitting? | [`ejemplo-overfitting.md`](assets/ejemplo-overfitting.md) |
-| Profesor DL | ¿Que es backpropagation? | [`ejemplo-backpropagation.md`](assets/ejemplo-backpropagation.md) |
-| Tutor de Matematicas | Explica la regla de la cadena | [`ejemplo-regla-cadena.md`](assets/ejemplo-regla-cadena.md) |
-| Arquitecto Python | Crea una API basica con FastAPI | [`ejemplo-api-fastapi.md`](assets/ejemplo-api-fastapi.md) |
-| Revisor de Codigo | Analisis de codigo correcto | [`ejemplo-revision-codigo.md`](assets/ejemplo-revision-codigo.md) |
-| Mentor de Proyectos | Organizar tareas de un proyecto | [`ejemplo-organizacion-proyecto.md`](assets/ejemplo-organizacion-proyecto.md) |
-| Investigador | Compara FastAPI vs Flask | [`ejemplo-comparacion-tecnologias.md`](assets/ejemplo-comparacion-tecnologias.md) |
+| Profesor ML | ¿Que es el overfitting? | [`ejemplo-overfitting.md`](assets/conversaciones/ejemplo-overfitting.md) |
+| Profesor DL | ¿Que es backpropagation? | [`ejemplo-backpropagation.md`](assets/conversaciones/ejemplo-backpropagation.md) |
+| Tutor de Matematicas | Explica la regla de la cadena | [`ejemplo-regla-cadena.md`](assets/conversaciones/ejemplo-regla-cadena.md) |
+| Arquitecto Python | Crea una API basica con FastAPI | [`ejemplo-api-fastapi.md`](assets/conversaciones/ejemplo-api-fastapi.md) |
+| Revisor de Codigo | Analisis de codigo correcto | [`ejemplo-revision-codigo.md`](assets/conversaciones/ejemplo-revision-codigo.md) |
+| Mentor de Proyectos | Organizar tareas de un proyecto | [`ejemplo-organizacion-proyecto.md`](assets/conversaciones/ejemplo-organizacion-proyecto.md) |
+| Investigador | Compara FastAPI vs Flask | [`ejemplo-comparacion-tecnologias.md`](assets/conversaciones/ejemplo-comparacion-tecnologias.md) |
 
 ---
 
