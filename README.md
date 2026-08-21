@@ -204,7 +204,9 @@ La guia completa esta en [`documentacion/automatizacion-pruebas.md`](documentaci
 
 ### Video
 
-[Ver demo en video](assets/demo-asistentes-ia.mp4)
+[Ver demo en video](assets/demo/demo-asistentes-ia.mp4)
+
+![Demo del proyecto](assets/demo/demo-asistentes-ia.gif)
 
 ### Capturas de ejecucion
 
