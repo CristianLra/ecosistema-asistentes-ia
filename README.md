@@ -17,6 +17,40 @@ Conjunto de **7 asistentes especializados** que corren localmente mediante [Olla
 
 ---
 
+## Demo
+
+![Demo del proyecto](assets/demo/demo-asistentes-ia.gif)
+
+[Ver demo en video](assets/demo/demo-asistentes-ia.mp4)
+
+### Capturas de ejecucion
+
+![Runner ejecutando pruebas del Revisor de Codigo](assets/screenshots/screenshot-runner-revisor.png)
+
+![Resumen global de pruebas](assets/screenshots/screenshot-resumen-global.png)
+
+### Conversaciones con asistentes
+
+![Profesor ML explicando overfitting](assets/screenshots/screenshot-conv-profesor-ml.png)
+
+![Investigador comparando FastAPI vs Flask](assets/screenshots/screenshot-conv-investigador.png)
+
+![Arquitecto Python creando endpoint GET](assets/screenshots/screenshot-conv-arquitecto.png)
+
+### Ejemplos de conversaciones
+
+| Asistente | Pregunta | Archivo |
+|-----------|----------|---------|
+| Profesor ML | ¿Que es el overfitting? | [`ejemplo-overfitting.md`](assets/conversaciones/ejemplo-overfitting.md) |
+| Profesor DL | ¿Que es backpropagation? | [`ejemplo-backpropagation.md`](assets/conversaciones/ejemplo-backpropagation.md) |
+| Tutor de Matematicas | Explica la regla de la cadena | [`ejemplo-regla-cadena.md`](assets/conversaciones/ejemplo-regla-cadena.md) |
+| Arquitecto Python | Crea una API basica con FastAPI | [`ejemplo-api-fastapi.md`](assets/conversaciones/ejemplo-api-fastapi.md) |
+| Revisor de Codigo | Analisis de codigo correcto | [`ejemplo-revision-codigo.md`](assets/conversaciones/ejemplo-revision-codigo.md) |
+| Mentor de Proyectos | Organizar tareas de un proyecto | [`ejemplo-organizacion-proyecto.md`](assets/conversaciones/ejemplo-organizacion-proyecto.md) |
+| Investigador | Compara FastAPI vs Flask | [`ejemplo-comparacion-tecnologias.md`](assets/conversaciones/ejemplo-comparacion-tecnologias.md) |
+
+---
+
 ## Caracteristicas
 
 - **Especializacion:** cada asistente tiene un unico rol (ensenanza, revision de codigo, planificacion, etc.).
@@ -182,62 +216,7 @@ python pruebas/ejecutar_pruebas.py --asistente revisor-codigo
 python pruebas/ejecutar_pruebas.py --solo-resumen
 ```
 
-Salida de ejemplo:
-
-```text
-== Revisor de Codigo (revisor-codigo) ==
-  Calentando modelo revisor-codigo...
-  Prueba 001 | consultando...
-  Prueba 001 | Comprobar que identifica correctamente codigo sin problemas.
-  Prueba 002 | consultando...
-  Prueba 002 | Evaluar la calidad de las mejoras propuestas.
-  Prueba 003 | consultando...
-  Prueba 003 | Evaluar el analisis de mantenibilidad sin generar una implementacion completa.
-  Prueba 004 | consultando...
-  Prueba 004 | Comprobar que deriva al Arquitecto Python ante una solicitud de desarrollo desde cero.
-```
-
 La guia completa esta en [`documentacion/automatizacion-pruebas.md`](documentacion/automatizacion-pruebas.md).
-
----
-
-## Demo
-
-### Video
-
-[Ver demo en video](assets/demo/demo-asistentes-ia.mp4)
-
-![Demo del proyecto](assets/demo/demo-asistentes-ia.gif)
-
-### Capturas de ejecucion
-
-| Asistente | Pregunta | Archivo |
-|-----------|----------|---------|
-| Profesor ML | ¿Que es el overfitting? | [`ejemplo-overfitting.md`](assets/conversaciones/ejemplo-overfitting.md) |
-| Profesor DL | ¿Que es backpropagation? | [`ejemplo-backpropagation.md`](assets/conversaciones/ejemplo-backpropagation.md) |
-| Tutor de Matematicas | Explica la regla de la cadena | [`ejemplo-regla-cadena.md`](assets/conversaciones/ejemplo-regla-cadena.md) |
-| Arquitecto Python | Crea una API basica con FastAPI | [`ejemplo-api-fastapi.md`](assets/conversaciones/ejemplo-api-fastapi.md) |
-| Revisor de Codigo | Analisis de codigo correcto | [`ejemplo-revision-codigo.md`](assets/conversaciones/ejemplo-revision-codigo.md) |
-| Mentor de Proyectos | Organizar tareas de un proyecto | [`ejemplo-organizacion-proyecto.md`](assets/conversaciones/ejemplo-organizacion-proyecto.md) |
-| Investigador | Compara FastAPI vs Flask | [`ejemplo-comparacion-tecnologias.md`](assets/conversaciones/ejemplo-comparacion-tecnologias.md) |
-
-### Capturas de ejecucion
-
-**Runner — Revisor de Codigo:**
-
-![Runner ejecutando pruebas del Revisor de Codigo](assets/screenshots/screenshot-runner-revisor.png)
-
-**Resumen global de pruebas:**
-
-![Resumen global de pruebas](assets/screenshots/screenshot-resumen-global.png)
-
-**Conversaciones con asistentes:**
-
-![Profesor ML explicando overfitting](assets/screenshots/screenshot-conv-profesor-ml.png)
-
-![Investigador comparando FastAPI vs Flask](assets/screenshots/screenshot-conv-investigador.png)
-
-![Arquitecto Python creando endpoint GET](assets/screenshots/screenshot-conv-arquitecto.png)
 
 ---
 
