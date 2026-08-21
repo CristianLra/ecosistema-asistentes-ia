@@ -121,6 +121,7 @@ asistentes-ia/
 ├── plantillas/          # Plantillas reutilizables para nuevos asistentes
 ├── assets/              # Demos y ejemplos
 │   ├── conversaciones/  # Conversaciones reales por asistente
+│   ├── demo/            # Video y GIF de demostracion
 │   └── screenshots/     # Capturas de ejecucion
 ├── pruebas/             # Sistema de pruebas automatizadas
 │   ├── catalogo/        # Definicion de pruebas por asistente (JSON)
